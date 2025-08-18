@@ -1,0 +1,42 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
+yarn-debug.log
+package-lock.json
+
+# Build files
+dist/
+build/
+
+# IDE and editor specific files
+.idea/
+.vscode/*
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.sublime-project
+*.sublime-workspace
+
+# OS specific files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Temporary files
+*.log
+*.tmp
+*.temp
+.cache/
+
+# Audio files that might be used for testing
+*.mp3
+*.wav
+*.ogg
+*.aac
+
+# Except sample audio files in assets
+!src/assets/*.mp3
+!src/assets/*.wav
+!src/assets/*.ogg

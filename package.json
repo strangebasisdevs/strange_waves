@@ -1,0 +1,23 @@
+{
+  "name": "strange-waves",
+  "version": "1.0.0",
+  "description": "An audio oscilloscope visualization built with p5.js",
+  "main": "src/js/main.js",
+  "scripts": {
+    "start": "npx http-server -o",
+    "test": "echo \"To run tests, open tests/oscilloscope.test.js in a browser with console open\" && exit 0"
+  },
+  "keywords": [
+    "p5.js",
+    "audio",
+    "visualization",
+    "oscilloscope",
+    "sound",
+    "web-audio"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}

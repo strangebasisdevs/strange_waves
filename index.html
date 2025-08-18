@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strange Waves - Audio Oscilloscope</title>
+    <link rel="stylesheet" href="src/css/style.css">
+    <!-- p5.js library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/p5.min.js"></script>
+    <!-- p5.sound library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/addons/p5.sound.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Strange Waves</h1>
+        <p>Audio Oscilloscope Visualization</p>
+    </header>
+
+    <main>
+        <div id="oscilloscope-container"></div>
+        
+        <div class="controls">
+            <div class="input-section">
+                <h2>Audio Input</h2>
+                <button id="microphoneButton">Use Microphone</button>
+                <input type="file" id="audioFileInput" accept="audio/*">
+                <label for="audioFileInput">Upload Audio File</label>
+            </div>
+            
+            <div class="visualization-settings">
+                <h2>Visualization Settings</h2>
+                <div class="setting">
+                    <label for="waveformColor">Waveform Color</label>
+                    <input type="color" id="waveformColor" value="#00ff00">
+                </div>
+                <div class="setting">
+                    <label for="backgroundColor">Background Color</label>
+                    <input type="color" id="backgroundColor" value="#000000">
+                </div>
+                <div class="setting">
+                    <label for="visualizationType">Visualization Type</label>
+                    <select id="visualizationType" title="Choose visualization type">
+                        <option value="waveform" title="Plot amplitude vs. time (classic oscilloscope)">Waveform</option>
+                        <option value="spectrum" title="Plot amplitude vs. frequency (frequency bars)">Spectrum</option>
+                        <option value="lissajous" title="Plot two channels against each other (stereo visualization)">Lissajous</option>
+                    </select>
+                </div>
+                <div class="setting">
+                    <label for="showAxisLabels">Show Axis Labels</label>
+                    <input type="checkbox" id="showAxisLabels" checked>
+                </div>
+                <div class="setting">
+                    <label for="showMeasurementValues">Show Measurement Values</label>
+                    <input type="checkbox" id="showMeasurementValues">
+                </div>
+                <div class="setting-info">
+                    <p id="visualizationDescription">Plot amplitude vs. time (classic oscilloscope)</p>
+                    <script>
+                    const descriptionMap = {
+                        waveform:   'Plot amplitude vs. time (classic oscilloscope)',
+                        spectrum:   'Plot amplitude vs. frequency (frequency bars)',
+                        lissajous:  'Plot two channels against each other (stereo visualization)'
+                    };
+                    const selectEl  = document.getElementById('visualizationType');
+                    const descriptionEl = document.getElementById('visualizationDescription');
+                    selectEl.addEventListener('change', () => {
+                        descriptionEl.textContent = descriptionMap[selectEl.value];
+                    });
+                    </script>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <p>© 2025 Strange Waves - Open Source Audio Visualization</p>
+        <a href="https://github.com/yourusername/strange_waves" target="_blank">GitHub</a>
+    </footer>
+
+    <!-- Main Script -->
+    <script src="src/js/main.js" type="module"></script>
+</body>
+</html>
